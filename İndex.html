@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareem Elbagoury | Digital Business Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #f4efe6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            background: linear-gradient(145deg, #161616 0%, #0a0a0a 100%);
+            border: 1px solid rgba(229, 222, 201, 0.15);
+            border-radius: 28px;
+            padding: 35px 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e5dec9;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #e5dec9;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #9c9688;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #b8b3a7;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(229, 222, 201, 0.12);
+            padding: 14px 20px;
+            border-radius: 14px;
+            color: #f4efe6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .link-btn i {
+            font-size: 20px;
+            margin-right: 16px;
+            color: #e5dec9;
+            width: 26px;
+            text-align: center;
+        }
+
+        .link-btn:hover {
+            background: rgba(229, 222, 201, 0.08);
+            border-color: #e5dec9;
+            transform: translateY(-2px);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background: #e5dec9;
+            color: #0b0b0b;
+            border: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            box-shadow: 0 5px 15px rgba(229, 222, 201, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #d4cbaf;
+            transform: translateY(-2px);
+        }
+
+        .footer-branding {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="profile-img-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" alt="Kareem Elbagoury" class="profile-img">
+        </div>
+        
+        <h1 class="logo-text">KAREEM ELBAGOURY</h1>
+        <div class="subtitle">DAVINCI DIGITAL CARD</div>
+        
+        <p class="bio">
+            Welcome to my digital business card. Tap any link below to connect with me directly or save my contact info.
+        </p>
+
+        <div class="links-list">
+            <a href="tel:+905379389485" class="link-btn">
+                <i class="fa-solid fa-phone"></i>
+                <span>+90 537 938 94 85</span>
+            </a>
+            
+            <a href="https://wa.me/905379389485" target="_blank" class="link-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="https://instagram.com/kareem_davinci" target="_blank" class="link-btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram (@kareem_davinci)</span>
+            </a>
+        </div>
+
+        <div class="action-btns">
+            <a href="#" onclick="saveContact(); return false;" class="btn-primary">
+                <i class="fa-solid fa-user-plus" style="margin-right: 8px; color: #0b0b0b;"></i> Save Contact
+            </a>
+        </div>
+
+        <div class="footer-branding">
+            Powered by Davinci NFC
+        </div>
+    </div>
+
+    <script>
+        function saveContact() {
+            const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Kareem Elbagoury\nTEL:+905379389485\nURL:https://instagram.com/kareem_davinci\nEND:VCARD";
+            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'kareem_elbagoury.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
